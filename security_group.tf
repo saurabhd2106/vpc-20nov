@@ -5,12 +5,12 @@ resource "aws_security_group" "public_security_group" {
   vpc_id      = aws_vpc.vpc.id
 
   ingress {
-    description      = "TLS from VPC"
-    from_port        = 0
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    
+    description = "TLS from VPC"
+    from_port   = 0
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+
   }
 
   egress {
@@ -33,12 +33,12 @@ resource "aws_security_group" "private_security_group" {
   vpc_id      = aws_vpc.vpc.id
 
   ingress {
-    description      = "TLS from VPC"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.vpc.cidr_block]
-    
+    description = "TLS from VPC"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [aws_vpc.vpc.cidr_block]
+
   }
 
   egress {
