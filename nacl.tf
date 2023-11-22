@@ -1,6 +1,8 @@
 resource "aws_network_acl" "public_nacl" {
   vpc_id = aws_vpc.vpc.id
 
+  #provider = aws.east-1
+
   egress {
     protocol   = "tcp"
     rule_no    = 200

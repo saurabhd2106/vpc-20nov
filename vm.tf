@@ -15,9 +15,14 @@ resource "aws_instance" "public_ec2" {
 
   associate_public_ip_address = true
 
+
+
   tags = {
     "Name" = "public_ec2"
   }
+
+  
+
 }
 
 resource "aws_instance" "private_ec2" {
